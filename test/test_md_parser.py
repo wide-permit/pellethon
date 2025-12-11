@@ -77,20 +77,19 @@ class TestSplitNodesDelimiter(unittest.TestCase):
         test_node = TextNode("", TextType.TEXT)
         self.assertEqual(split_nodes_delimiter([node], "", TextType.TEXT), [test_node])
 
-    # mutliple inline same delimiter-> should only parse the the given delimiter code
+    # mutliple nodes same delimiter
     def test_multi_inline_same_delimiter(self):
         node = TextNode("This __should__ have __two__ bold words", TextType.TEXT)
-        test_node = [
+        test_nodes = [
             TextNode("This ", TextType.TEXT),
             TextNode("should", TextType.BOLD),
             TextNode(" have ", TextType.TEXT),
-            TextNode,
+            TextNode("two", TextType.BOLD),
+            TextNode(" bold words", TextType.TEXT),
         ]
 
 
-# multiple inline different delimiter -> ""
-# multiple nested
-#
+# multiple nodes different delimiter
 
 if __name__ == "__main__":
     unittest.main()

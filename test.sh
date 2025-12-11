@@ -1,3 +1,3 @@
 #!/bin/bash
 
-python3 -m unittest discover -s test
+python3 test/run_tests.py

@@ -37,6 +37,7 @@ class TestHTMLNode(unittest.TestCase):
         props = {"class": "container", "id": "main"}
         node = HTMLNode(tag="div", value="parent", children=[child], props=props)
 
+        self.assertIsNotNone(node.children)
         self.assertEqual(node.tag, "div")
         self.assertEqual(node.value, "parent")
         self.assertEqual(len(node.children), 1)
